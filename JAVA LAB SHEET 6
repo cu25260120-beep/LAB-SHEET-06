@@ -1,0 +1,771 @@
+Basic Level (Q1 - Q10)
+Q1) Create a class Student with instance fields name, age and a class variable count to track number of students. Use local variables to assign values and display details.
+Java
+class Student {
+    String name;
+    int age;
+    static int count = 0;
+
+    void setDetails(String studentName, int studentAge) {
+        String localName = studentName;
+        int localAge = studentAge;
+        name = localName;
+        age = localAge;
+        count++;
+    }
+
+    void display() {
+        System.out.println("Student Name: " + name + ", Age: " + age);
+        System.out.println("Total Students: " + count);
+    }
+}
+
+public class Main1 {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setDetails("Alice", 20);
+        s1.display();
+    }
+}
+Q2) Create a class Rectangle with instance fields length, breadth, a class variable shapeName = "Rectangle". Write methods with local variables to calculate and display the area.
+Java
+class Rectangle {
+    double length;
+    double breadth;
+    static String shapeName = "Rectangle";
+
+    void calculateArea(double l, double b) {
+        double localLength = l;
+        double localBreadth = b;
+        double area = localLength * localBreadth;
+        System.out.println("Shape: " + shapeName);
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+public class Main2 {
+    public static void main(String[] args) {
+        Rectangle rect = new Rectangle();
+        rect.calculateArea(10.5, 5.0);
+    }
+}
+Q3) Create a class Circle with instance field radius, a class variable PI = 3.14. Use local variables to calculate area and circumference.
+Java
+class Circle {
+    double radius;
+    static final double PI = 3.14;
+
+    void calculateProperties(double r) {
+        double localRadius = r;
+        double area = PI * localRadius * localRadius;
+        double circumference = 2 * PI * localRadius;
+        System.out.println("Area: " + area);
+        System.out.println("Circumference: " + circumference);
+    }
+}
+
+public class Main3 {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.calculateProperties(7.0);
+    }
+}
+Q4) Create a class Employee with instance fields empId, salary, and a class variable companyName. Display employee details using local variables.
+Java
+class Employee {
+    int empId;
+    double salary;
+    static String companyName = "TechCorp";
+
+    void displayDetails(int id, double sal) {
+        int localId = id;
+        double localSal = sal;
+        System.out.println("Company: " + companyName);
+        System.out.println("Employee ID: " + localId + ", Salary: " + localSal);
+    }
+}
+
+public class Main4 {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.displayDetails(101, 55000.0);
+    }
+}
+Q5) Create a class Book with fields title, author, price, and a class variable publisher. Use local variables to set and display book details.
+Java
+class Book {
+    String title;
+    String author;
+    double price;
+    static String publisher = "Pearson";
+
+    void setAndDisplay(String t, String a, double p) {
+        String localTitle = t;
+        String localAuthor = a;
+        double localPrice = p;
+        
+        title = localTitle;
+        author = localAuthor;
+        price = localPrice;
+
+        System.out.println("Publisher: " + publisher);
+        System.out.println("Book: " + title + " by " + author + ", Price: $" + price);
+    }
+}
+
+public class Main5 {
+    public static void main(String[] args) {
+        Book b = new Book();
+        b.setAndDisplay("Java Programming", "John Doe", 450.0);
+    }
+}
+Q6) Create a class Car with fields brand, mileage, and a class variable wheels = 4. Display details using local variables.
+Java
+class Car {
+    String brand;
+    double mileage;
+    static int wheels = 4;
+
+    void showCar(String b, double m) {
+        String localBrand = b;
+        double localMileage = m;
+        System.out.println("Brand: " + localBrand + ", Mileage: " + localMileage + " kmpl, Wheels: " + wheels);
+    }
+}
+
+public class Main6 {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.showCar("Hyundai", 18.5);
+    }
+}
+Q7) Create a class BankAccount with fields accountNumber, balance, and a class variable bankName. Use local variables in deposit method.
+Java
+class BankAccount {
+    String accountNumber;
+    double balance;
+    static String bankName = "State Bank";
+
+    void deposit(double amount) {
+        double localAmount = amount;
+        balance += localAmount;
+        System.out.println("Bank: " + bankName);
+        System.out.println("Deposited: " + localAmount + ", New Balance: " + balance);
+    }
+}
+
+public class Main7 {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount();
+        acc.accountNumber = "ACC12345";
+        acc.balance = 1000.0;
+        acc.deposit(500.0);
+    }
+}
+Q8) Create a class Pen with fields color, type, and a class variable manufacturer. Use local variables to display pen details.
+Java
+class Pen {
+    String color;
+    String type;
+    static String manufacturer = "Cello";
+
+    void display(String c, String t) {
+        String localColor = c;
+        String localType = t;
+        System.out.println("Manufacturer: " + manufacturer);
+        System.out.println("Color: " + localColor + ", Type: " + localType);
+    }
+}
+
+public class Main8 {
+    public static void main(String[] args) {
+        Pen p = new Pen();
+        p.display("Blue", "Ballpoint");
+    }
+}
+Q9) Create a class Laptop with fields brand, RAM, and a class variable os = "Windows". Use local variables to display details.
+Java
+class Laptop {
+    String brand;
+    int RAM;
+    static String os = "Windows";
+
+    void display(String b, int r) {
+        String localBrand = b;
+        int localRAM = r;
+        System.out.println("Brand: " + localBrand + ", RAM: " + localRAM + "GB, OS: " + os);
+    }
+}
+
+public class Main9 {
+    public static void main(String[] args) {
+        Laptop lap = new Laptop();
+        lap.display("HP", 16);
+    }
+}
+Q10) Create a class Movie with fields name, genre, rating, and a class variable industry. Display movie details using local variables.
+Java
+class Movie {
+    String name;
+    String genre;
+    double rating;
+    static String industry = "Hollywood";
+
+    void display(String n, String g, double r) {
+        String localName = n;
+        String localGenre = g;
+        double localRating = r;
+        System.out.println("Industry: " + industry);
+        System.out.println("Movie: " + localName + " | Genre: " + localGenre + " | Rating: " + localRating);
+    }
+}
+
+public class Main10 {
+    public static void main(String[] args) {
+        Movie m = new Movie();
+        m.display("Inception", "Sci-Fi", 8.8);
+    }
+}
+Intermediate Level (Q11 - Q20)
+Q11) Create a class Calculator with methods for add, subtract, multiply, divide using local variables. Add a class variable operationsCount to count total operations done.
+Java
+class Calculator {
+    static int operationsCount = 0;
+
+    double add(double a, double b) {
+        operationsCount++;
+        double res = a + b;
+        return res;
+    }
+
+    double subtract(double a, double b) {
+        operationsCount++;
+        double res = a - b;
+        return res;
+    }
+
+    double multiply(double a, double b) {
+        operationsCount++;
+        double res = a * b;
+        return res;
+    }
+
+    double divide(double a, double b) {
+        operationsCount++;
+        double res = a / b;
+        return res;
+    }
+}
+
+public class Main11 {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Sum: " + calc.add(10, 5));
+        System.out.println("Total Operations: " + Calculator.operationsCount);
+    }
+}
+Q12) Create a class StudentMarks with fields marks1, marks2, marks3, and a class variable universityName. Use local variables to calculate average.
+Java
+class StudentMarks {
+    double marks1, marks2, marks3;
+    static String universityName = "COER University";
+
+    void calculateAverage(double m1, double m2, double m3) {
+        double localM1 = m1;
+        double localM2 = m2;
+        double localM3 = m3;
+        double avg = (localM1 + localM2 + localM3) / 3.0;
+        System.out.println("University: " + universityName);
+        System.out.println("Average Marks: " + avg);
+    }
+}
+
+public class Main12 {
+    public static void main(String[] args) {
+        StudentMarks sm = new StudentMarks();
+        sm.calculateAverage(85.0, 90.0, 78.5);
+    }
+}
+Q13) Create a class Temperature with a field celsius and a class variable scale = "Celsius". Use local variables to convert into Fahrenheit and Kelvin.
+Java
+class Temperature {
+    double celsius;
+    static String scale = "Celsius";
+
+    void convert(double c) {
+        double localCelsius = c;
+        double fahrenheit = (localCelsius * 9.0 / 5.0) + 32;
+        double kelvin = localCelsius + 273.15;
+        System.out.println("Scale: " + scale);
+        System.out.println("Fahrenheit: " + fahrenheit);
+        System.out.println("Kelvin: " + kelvin);
+    }
+}
+
+public class Main13 {
+    public static void main(String[] args) {
+        Temperature temp = new Temperature();
+        temp.convert(25.0);
+    }
+}
+Q14) Create a class Person with fields name, age and a class variable country. Use local variables to check voting eligibility.
+Java
+class Person {
+    String name;
+    int age;
+    static String country = "India";
+
+    void checkVoting(String n, int a) {
+        String localName = n;
+        int localAge = a;
+        System.out.println("Country: " + country);
+        if (localAge >= 18) {
+            System.out.println(localName + " is eligible to vote.");
+        } else {
+            System.out.println(localName + " is NOT eligible to vote.");
+        }
+    }
+}
+
+public class Main14 {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.checkVoting("Mohit", 19);
+    }
+}
+Q15) Create a class SimpleInterest with fields principal, rate, time, and a class variable bank. Use local variables to calculate interest.
+Java
+class SimpleInterest {
+    double principal, rate, time;
+    static String bank = "SBI";
+
+    void calculate(double p, double r, double t) {
+        double localP = p;
+        double localR = r;
+        double localT = t;
+        double si = (localP * localR * localT) / 100;
+        System.out.println("Bank: " + bank);
+        System.out.println("Simple Interest: " + si);
+    }
+}
+
+public class Main15 {
+    public static void main(String[] args) {
+        SimpleInterest si = new SimpleInterest();
+        si.calculate(10000, 5, 2);
+    }
+}
+Q16) Create a class Triangle with sides a, b, c, and a class variable type = "Scalene/Isosceles/Equilateral". Use local variables to check validity.
+Java
+class Triangle {
+    double a, b, c;
+    static String type = "Scalene/Isosceles/Equilateral";
+
+    void checkValidity(double side1, double side2, double side3) {
+        double s1 = side1;
+        double s2 = side2;
+        double s3 = side3;
+        
+        if ((s1 + s2 > s3) && (s2 + s3 > s1) && (s1 + s3 > s2)) {
+            System.out.println("Valid Triangle.");
+            if (s1 == s2 && s2 == s3) {
+                System.out.println("Equilateral Triangle");
+            } else if (s1 == s2 || s2 == s3 || s1 == s3) {
+                System.out.println("Isosceles Triangle");
+            } else {
+                System.out.println("Scalene Triangle");
+            }
+        } else {
+            System.out.println("Invalid Triangle.");
+        }
+    }
+}
+
+public class Main16 {
+    public static void main(String[] args) {
+        Triangle t = new Triangle();
+        t.checkValidity(5, 5, 5);
+    }
+}
+Q17) Create a class StudentGrade with fields name, marks, and a class variable passingMarks. Use local variables to assign grade.
+Java
+class StudentGrade {
+    String name;
+    double marks;
+    static double passingMarks = 40.0;
+
+    void assignGrade(String n, double m) {
+        String localName = n;
+        double localMarks = m;
+        System.out.println("Student: " + localName);
+        if (localMarks >= passingMarks) {
+            if (localMarks >= 85) System.out.println("Grade: A");
+            else if (localMarks >= 70) System.out.println("Grade: B");
+            else System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: F (Fail)");
+        }
+    }
+}
+
+public class Main17 {
+    public static void main(String[] args) {
+        StudentGrade sg = new StudentGrade();
+        sg.assignGrade("Rahul", 78.5);
+    }
+}
+Q18) Create a class ElectricBill with a field units and a class variable fixedCharge. Use local variables to calculate total bill.
+Java
+class ElectricBill {
+    double units;
+    static double fixedCharge = 100.0;
+
+    void calculateBill(double u) {
+        double localUnits = u;
+        double bill = fixedCharge;
+        if (localUnits <= 100) {
+            bill += localUnits * 1.5;
+        } else {
+            bill += (100 * 1.5) + ((localUnits - 100) * 3.0);
+        }
+        System.out.println("Total Electric Bill: Rs. " + bill);
+    }
+}
+
+public class Main18 {
+    public static void main(String[] args) {
+        ElectricBill eb = new ElectricBill();
+        eb.calculateBill(150);
+    }
+}
+Q19) Create a class Product with fields id, name, price, and a class variable discountRate. Use local variables to calculate final price.
+Java
+class Product {
+    int id;
+    String name;
+    double price;
+    static double discountRate = 0.10; // 10%
+
+    void calculateFinalPrice(double p) {
+        double localPrice = p;
+        double finalPrice = localPrice - (localPrice * discountRate);
+        System.out.println("Original Price: " + localPrice);
+        System.out.println("Final Price after discount: " + finalPrice);
+    }
+}
+
+public class Main19 {
+    public static void main(String[] args) {
+        Product prod = new Product();
+        prod.calculateFinalPrice(1000.0);
+    }
+}
+Q20) Create a class BankAccount with fields balance, and a class variable bankCode. Use local variables to ensure withdrawal does not exceed balance.
+Java
+class BankAccount {
+    double balance = 5000.0;
+    static String bankCode = "COER001";
+
+    void withdraw(double amount) {
+        double localAmount = amount;
+        if (localAmount <= balance) {
+            balance -= localAmount;
+            System.out.println("Successfully withdrew: " + localAmount);
+            System.out.println("Remaining Balance: " + balance);
+        } else {
+            System.out.println("Error: Withdrawal amount exceeds current balance!");
+        }
+    }
+}
+
+public class Main20 {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount();
+        acc.withdraw(2000.0);
+    }
+}
+Advanced Level (Q21 - Q30)
+Q21) Create a class Palindrome with a method using local variables to check if a number is palindrome. Add a class variable countChecks.
+Java
+class Palindrome {
+    static int countChecks = 0;
+
+    void checkPalindrome(int num) {
+        countChecks++;
+        int localNum = num;
+        int reversed = 0, remainder, original = localNum;
+
+        while (localNum != 0) {
+            remainder = localNum % 10;
+            reversed = reversed * 10 + remainder;
+            localNum /= 10;
+        }
+
+        if (original == reversed) {
+            System.out.println(original + " is a Palindrome.");
+        } else {
+            System.out.println(original + " is NOT a Palindrome.");
+        }
+        System.out.println("Total Checks: " + countChecks);
+    }
+}
+
+public class Main21 {
+    public static void main(String[] args) {
+        Palindrome p = new Palindrome();
+        p.checkPalindrome(121);
+    }
+}
+Q22) Create a class Armstrong with a method using local variables to check Armstrong number. Add a class variable totalChecks.
+Java
+class Armstrong {
+    static int totalChecks = 0;
+
+    void checkArmstrong(int num) {
+        totalChecks++;
+        int localNum = num;
+        int original = localNum, sum = 0, remainder;
+
+        while (localNum != 0) {
+            remainder = localNum % 10;
+            sum += Math.pow(remainder, 3);
+            localNum /= 10;
+        }
+
+        if (sum == original) {
+            System.out.println(original + " is an Armstrong number.");
+        } else {
+            System.out.println(original + " is NOT an Armstrong number.");
+        }
+        System.out.println("Total Checks: " + totalChecks);
+    }
+}
+
+public class Main22 {
+    public static void main(String[] args) {
+        Armstrong arm = new Armstrong();
+        arm.checkArmstrong(153);
+    }
+}
+Q23) Create a class PrimeChecker with a method using local variables to check prime. Add a class variable totalPrimeChecks.
+Java
+class PrimeChecker {
+    static int totalPrimeChecks = 0;
+
+    void checkPrime(int num) {
+        totalPrimeChecks++;
+        int localNum = num;
+        boolean isPrime = true;
+
+        if (localNum <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(localNum); i++) {
+                if (localNum % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            System.out.println(localNum + " is Prime.");
+        } else {
+            System.out.println(localNum + " is NOT Prime.");
+        }
+        System.out.println("Total Prime Checks: " + totalPrimeChecks);
+    }
+}
+
+public class Main23 {
+    public static void main(String[] args) {
+        PrimeChecker pc = new PrimeChecker();
+        pc.checkPrime(11);
+    }
+}
+Q24) Create a class Fibonacci with a method to display first N terms using local variables. Add a class variable seriesCount.
+Java
+class Fibonacci {
+    static int seriesCount = 0;
+
+    void displaySeries(int n) {
+        seriesCount++;
+        int localN = n;
+        int t1 = 0, t2 = 1;
+        System.out.print("Fibonacci Series (" + localN + " terms): ");
+        for (int i = 1; i <= localN; ++i) {
+            System.out.print(t1 + " ");
+            int sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+        }
+        System.out.println();
+    }
+}
+
+public class Main24 {
+    public static void main(String[] args) {
+        Fibonacci fib = new Fibonacci();
+        fib.displaySeries(7);
+    }
+}
+Q25) Create a class Factorial with a method to compute factorial using local variables. Add a class variable totalCalls.
+Java
+class Factorial {
+    static int totalCalls = 0;
+
+    void compute(int n) {
+        totalCalls++;
+        int localN = n;
+        long fact = 1;
+        for (int i = 1; i <= localN; i++) {
+            fact *= i;
+        }
+        System.out.println("Factorial of " + localN + " is " + fact);
+        System.out.println("Total Calls: " + totalCalls);
+    }
+}
+
+public class Main25 {
+    public static void main(String[] args) {
+        Factorial f = new Factorial();
+        f.compute(5);
+    }
+}
+Q26) Create a class Matrix with fields for 2x2 matrix and a class variable matrixType. Use local variables to add and subtract two matrices.
+Java
+class Matrix {
+    int[][] mat = new int[2][2];
+    static String matrixType = "Square 2x2";
+
+    void addMatrices(int[][] m1, int[][] m2) {
+        int[][] localM1 = m1;
+        int[][] localM2 = m2;
+        int[][] result = new int[2][2];
+
+        System.out.println("Matrix Type: " + matrixType);
+        System.out.println("Matrix Addition Result:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                result[i][j] = localM1[i][j] + localM2[i][j];
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Main26 {
+    public static void main(String[] args) {
+        Matrix m = new Matrix();
+        int[][] A = {{1, 2}, {3, 4}};
+        int[][] B = {{5, 6}, {7, 8}};
+        m.addMatrices(A, B);
+    }
+}
+Q27) Create a class StringReverse with a method using local variables to reverse a string. Add a class variable totalReversals.
+Java
+class StringReverse {
+    static int totalReversals = 0;
+
+    void reverse(String str) {
+        totalReversals++;
+        String localStr = str;
+        String reversedStr = "";
+
+        for (int i = localStr.length() - 1; i >= 0; i--) {
+            reversedStr += localStr.charAt(i);
+        }
+
+        System.out.println("Original: " + localStr);
+        System.out.println("Reversed: " + reversedStr);
+        System.out.println("Total Reversals: " + totalReversals);
+    }
+}
+
+public class Main27 {
+    public static void main(String[] args) {
+        StringReverse sr = new StringReverse();
+        sr.reverse("COER");
+    }
+}
+Q28) Create a class WordCounter with a method using local variables to count words in a sentence. Add a class variable language.
+Java
+class WordCounter {
+    static String language = "English";
+
+    void countWords(String sentence) {
+        String localSentence = sentence;
+        if (localSentence == null || localSentence.isEmpty()) {
+            System.out.println("Word count: 0");
+            return;
+        }
+        String[] words = localSentence.trim().split("\\s+");
+        System.out.println("Language: " + language);
+        System.out.println("Total Words: " + words.length);
+    }
+}
+
+public class Main28 {
+    public static void main(String[] args) {
+        WordCounter wc = new WordCounter();
+        wc.countWords("Foundations of Java Development Lab");
+    }
+}
+Q29) Create a class Employee with fields name, salary, and a class variable organization. Use local variables to compare salaries of two employees.
+Java
+class Employee {
+    String name;
+    double salary;
+    static String organization = "COER Univ Corp";
+
+    void compareSalary(Employee e1, Employee e2) {
+        Employee localEmp1 = e1;
+        Employee localEmp2 = e2;
+
+        System.out.println("Organization: " + organization);
+        if (localEmp1.salary > localEmp2.salary) {
+            System.out.println(localEmp1.name + " has a higher salary than " + localEmp2.name);
+        } else if (localEmp1.salary < localEmp2.salary) {
+            System.out.println(localEmp2.name + " has a higher salary than " + localEmp1.name);
+        } else {
+            System.out.println("Both employees have equal salaries.");
+        }
+    }
+}
+
+public class Main29 {
+    public static void main(String[] args) {
+        Employee e1 = new Employee();
+        e1.name = "Amit";
+        e1.salary = 60000;
+
+        Employee e2 = new Employee();
+        e2.name = "Sumit";
+        e2.salary = 75000;
+
+        e1.compareSalary(e1, e2);
+    }
+}
+Q30) Create a class Library with fields booksAvailable, and a class variable libraryName. Use local variables to update issue and return operations.
+Java
+class Library {
+    int booksAvailable = 100;
+    static String libraryName = "Central Library COER";
+
+    void updateLibrary(int issueCount, int returnCount) {
+        int localIssue = issueCount;
+        int localReturn = returnCount;
+
+        booksAvailable = booksAvailable - localIssue + localReturn;
+        System.out.println("Library Name: " + libraryName);
+        System.out.println("Current Books Available: " + booksAvailable);
+    }
+}
+
+public class Main30 {
+    public static void main(String[] args) {
+        Library lib = new Library();
+        lib.updateLibrary(5, 2);
+    }
+}
